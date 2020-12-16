@@ -52,7 +52,7 @@ def load_txts(dir):
     return utterences
 
 class VCTK(Dataset):
-    url = 'http://homepages.inf.ed.ac.uk/jyamagis/release/VCTK-Corpus.tar.gz'
+    url = 'http://www.udialogue.org/download/VCTK-Corpus.tar.gz'
     dset_path = 'VCTK-Corpus'
 
     def make_speaker_dic(self, root):
