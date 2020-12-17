@@ -1,6 +1,6 @@
 #from https://github.com/pytorch/audio/blob/master/torchaudio/datasets/vctk.py
 
-import os
+import os, sys
 from torch.utils.data import Dataset
 import errno
 import shutil
@@ -123,7 +123,7 @@ class VCTK(Dataset):
 
         url = self.url
         print('Downloading ' + url)
-        filename = url.rpartition('/')[2]
+        filename = url.rpartition('/')[-1]
         file_path = os.path.join(self.root, self.raw_folder, filename)
         if not os.path.isfile(file_path):
             urllib.request.urlretrieve(url, file_path)
